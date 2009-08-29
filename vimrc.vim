@@ -1,5 +1,6 @@
 filetype plugin on
 filetype indent on
+set gfn=ProggyCleanTTSZ\ 12
 set t_Co=256
 syntax on
 colorscheme molokai
