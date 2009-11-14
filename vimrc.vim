@@ -1,6 +1,6 @@
 filetype plugin on
 filetype indent on
-set gfn=Consolas 10
+set gfn=Consolas\ 10
 set t_Co=256
 syntax on
 colorscheme molokai
