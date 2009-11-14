@@ -1,10 +1,11 @@
 filetype plugin on
 filetype indent on
-set gfn=ProggyCleanTTSZ\ 12
+set gfn=Consolas 10
 set t_Co=256
 syntax on
 colorscheme molokai
-
+set lines=50 columns=80
+set textwidth=80
 set tabstop=4
 set shiftwidth=4
 set smarttab
@@ -34,5 +35,5 @@ au! BufRead,BufNewFile *.json setfiletype json
 au BufRead,BufNewFile *.js set ft=javascript.jquery
 
 "warning when going over 80 characters per line
-"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-"match OverLength /\%81v.*/
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.*/
