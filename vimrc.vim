@@ -1,9 +1,7 @@
 filetype plugin on
 filetype indent on
-if has('gui')
+if has('gui_running') && &term == "buitin_gui"
     colorscheme wombat
-else
-    set CSApprox_loaded
 endif
 set t_Co=256
 set guifont=ProggyCLeanTTSZ\ 12
