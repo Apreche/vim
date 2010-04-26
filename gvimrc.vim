@@ -1,6 +1,8 @@
 filetype plugin on
 filetype indent on
+colorscheme wombat
 set t_Co=256
+set guifont=ProggyCLeanTTSZ\ 12
 syntax on
 
 set tabstop=4
