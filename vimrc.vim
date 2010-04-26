@@ -1,6 +1,10 @@
 filetype plugin on
 filetype indent on
-colorscheme wombat
+if has('gui')
+    colorscheme wombat
+else
+    set CSApprox_loaded
+endif
 set t_Co=256
 set guifont=ProggyCLeanTTSZ\ 12
 syntax on
