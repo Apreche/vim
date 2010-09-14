@@ -12,7 +12,12 @@ if &t_Co > 2 || has("gui_running")
     syntax on
 endif
 
-if ! has("macunix") && has("gui_running")
+if has("gui_running")
+    set lines=60
+    set columns=84
+endif
+
+if !has("macunix") && has("gui_running")
     set guifont=ProggyCleanTTSZ\ 12
 endif
 
