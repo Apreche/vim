@@ -31,7 +31,6 @@ set showmatch
 set hlsearch
 set incsearch
 
-set nowrap
 set scrolloff=5
 set backspace=2
 set number
