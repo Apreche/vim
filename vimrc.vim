@@ -1,29 +1,53 @@
+filetype on
 filetype plugin on
 filetype indent on
-set t_Co=256
-syntax on
+
+if &t_Co >= 256 || has("gui_running")
+    colorscheme wombat256
+endif
+if &t_Co >= 16 && &t_Co < 256
+    colorscheme wombat
+endif
+if &t_Co > 2 || has("gui_running")
+    syntax on
+endif
+
+if ! has("macunix") && has("gui_running")
+    set guifont=ProggyCleanTTSZ\ 12
+endif
 
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
 set smarttab
 set expandtab
-set softtabstop=4
+set shiftround
 set autoindent
+set copyindent
 
+set ignorecase
 set smartcase
-set scrolloff=5
 set showmatch
+set hlsearch
 set incsearch
+
+set nowrap
+set scrolloff=5
 set backspace=2
+set number
 set ruler
 
-"python smartindent
-"autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class 
+set visualbell
+set noerrorbells
+
+set pastetoggle=<F2>
+
 "python remove trailing whitespace
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
+"python highlighting extras
 let python_highlight_all = 1
 
-"special highlighting in php
+"PHP highlighting extras
 let php_sql_query = 1
 let php_htmlInStrings = 1
 let php_baselib = 1
