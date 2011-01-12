@@ -17,7 +17,9 @@ if has("gui_running")
     set columns=84
 endif
 
-if !has("macunix") && has("gui_running")
+if has("win32") && has("gui_running")
+    set guifont=ProggyCleanTTSZ:h12:cANSI
+elseif !has("macunix") && has("gui_running")
     set guifont=ProggyCleanTTSZ\ 12
 endif
 
