@@ -2,12 +2,9 @@ filetype on
 filetype plugin on
 filetype indent on
 
-if &t_Co >= 256 || has("gui_running")
-    colorscheme wombat256
-endif
-if &t_Co >= 16 && &t_Co < 256
-    colorscheme wombat
-endif
+"iTerm2 on OSX means 256 color everywhere
+colorscheme wombat256
+
 if &t_Co > 2 || has("gui_running")
     syntax on
 endif
@@ -21,6 +18,8 @@ if has("win32") && has("gui_running")
     set guifont=ProggyCleanTTSZ:h12:cANSI
 elseif !has("macunix") && has("gui_running")
     set guifont=ProggyCleanTTSZ\ 12
+else
+    set guifont=ProggyCleanTT:h16
 endif
 
 set tabstop=4
