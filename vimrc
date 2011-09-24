@@ -1,5 +1,5 @@
 filetype plugin indent on
-colorscheme IDLE
+colorscheme wombat256
 
 if &t_Co > 2 || has("gui_running")
     syntax on
@@ -12,8 +12,6 @@ if has("gui_running")
     set noantialias
 endif
 
-
-set textwidth=79
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
