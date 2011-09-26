@@ -8,8 +8,8 @@ endif
 if has("gui_running")
     set lines=45
     set columns=84
-    if has("mac")
-        set guifont="Courier:h14"
+    if has("macunix")
+        set guifont=Courier:h14
     elseif has("unix")
         set guifont="Monospace 10"
     endif
