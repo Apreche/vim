@@ -11,7 +11,7 @@ if has("gui_running")
     if has("macunix")
         set guifont=Courier:h14
     elseif has("unix")
-        set guifont="Monospace 10"
+        set guifont=Anonymous\ Pro\ 12
     endif
     set noantialias
 endif
@@ -41,6 +41,10 @@ set visualbell
 set noerrorbells
 
 set pastetoggle=<F2>
+
+set backup
+set backupdir=/tmp
+set directory=/tmp
 
 "python remove trailing whitespace
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
