@@ -46,6 +46,9 @@ set backup
 set backupdir=/tmp
 set directory=/tmp
 
+set laststatus=2
+set statusline=%n\ %f%=%l\\%L
+
 "python remove trailing whitespace
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
 "python highlighting extras
