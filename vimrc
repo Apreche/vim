@@ -1,3 +1,4 @@
+call pathogen#infect()
 filetype plugin indent on
 colorscheme wombat256
 
@@ -8,12 +9,7 @@ endif
 if has("gui_running")
     set lines=45
     set columns=84
-    if has("macunix")
-        set guifont=Courier:h14
-    elseif has("unix")
-        set guifont=Anonymous\ Pro\ 12
-    endif
-    set noantialias
+    set guifont=ProggyCleanTTSZ\ 12
 endif
 
 set tabstop=4
