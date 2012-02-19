@@ -45,6 +45,15 @@ set directory=/tmp
 set laststatus=2
 set statusline=%n\ %f%=%l\\%L
 
+"NERDTree
+autocmd vimenter * if !argc() | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let NERDTreeChDirMode=1
+let NERDTreeIgnore=['\.pyc$', '\.swp$']
+let NERDTreeQuitOnOpen=1
+let NERDTreeMinimalUI=1
+let NERDTreeShowBookmarks=1
+
 "python remove trailing whitespace
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
 "python highlighting extras
