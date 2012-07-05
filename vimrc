@@ -26,7 +26,9 @@ set smartcase
 set showmatch
 set hlsearch
 set incsearch
+
 nnoremap ; :nohlsearch<CR>
+nnoremap <F3> :NumbersToggle<CR>
 
 set scrolloff=5
 set backspace=2
