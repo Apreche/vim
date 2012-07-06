@@ -9,7 +9,11 @@ endif
 if has("gui_running")
     set lines=45
     set columns=84
-    set guifont=ProggyCleanTTSZ\ 12
+    if has("win32")
+        set guifont=ProggyCleanTTSZ:h12:cANSI
+    else
+        set guifont=ProggyCleanTTSZ\ 12
+    endif
 endif
 
 set tabstop=4
