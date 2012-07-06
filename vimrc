@@ -24,32 +24,31 @@ set expandtab
 set shiftround
 set autoindent
 set copyindent
-
 set ignorecase
 set smartcase
 set showmatch
 set hlsearch
 set incsearch
-
-nnoremap ; :nohlsearch<CR>
-nnoremap <F3> :NumbersToggle<CR>
-
 set scrolloff=5
 set backspace=2
 set number
 set ruler
-
 set visualbell
 set noerrorbells
-
-set pastetoggle=<F2>
-
-set backup
-set backupdir=/tmp
-set directory=/tmp
-
 set laststatus=2
 set statusline=%n\ %f%=%l\\%L
+
+nnoremap ; :nohlsearch<CR>
+nnoremap <F3> :NumbersToggle<CR>
+set pastetoggle=<F2>
+
+if has("unix")
+    set backup
+    set backupdir=/tmp
+    set directory=/tmp
+elseif has("win32")
+    set nobackup
+endif
 
 "NERDTree
 autocmd vimenter * if !argc() | NERDTree | endif
