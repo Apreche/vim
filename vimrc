@@ -7,6 +7,7 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 if has("gui_running")
+    colorscheme Tomorrow
     set lines=45
     set columns=84
     if has("win32")
@@ -51,7 +52,6 @@ elseif has("win32")
 endif
 
 "NERDTree
-autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeChDirMode=1
 let NERDTreeIgnore=['\.pyc$', '\.swp$']
