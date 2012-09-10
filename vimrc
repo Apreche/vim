@@ -52,7 +52,7 @@ elseif has("win32")
 endif
 
 "NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeChDirMode=1
 let NERDTreeIgnore=['\.pyc$', '\.swp$']
 let NERDTreeQuitOnOpen=1
@@ -70,5 +70,5 @@ let php_htmlInStrings = 1
 let php_baselib = 1
 
 "warning when going over 79 characters per line
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%80v.*/
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%80v.*/
