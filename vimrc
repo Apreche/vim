@@ -48,7 +48,9 @@ if has("unix")
     set backupdir=/tmp
     set directory=/tmp
 elseif has("win32")
-    set nobackup
+    set backup
+    set backupdir=C:\Windows\Temp
+    set noswapfile
 endif
 
 "NERDTree
