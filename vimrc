@@ -11,9 +11,9 @@ if has("gui_running")
     set lines=45
     set columns=84
     if has("win32")
-        set guifont=ProggyCleanTTSZ:h12:cANSI
+        set guifont=Source_Code_Pro:h12:cANSI
     else
-        set guifont=ProggyCleanTTSZ\ 12
+        set guifont=Source\ Code\ Pro\ 12
     endif
 endif
 
