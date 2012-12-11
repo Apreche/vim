@@ -40,7 +40,6 @@ set laststatus=2
 set statusline=%n\ %f%=%l\\%L
 
 nnoremap ; :nohlsearch<CR>
-nnoremap <F3> :NumbersToggle<CR>
 set pastetoggle=<F2>
 
 if has("unix")
@@ -70,7 +69,3 @@ let python_highlight_all = 1
 let php_sql_query = 1
 let php_htmlInStrings = 1
 let php_baselib = 1
-
-"warning when going over 79 characters per line
-"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-"match OverLength /\%80v.*/
