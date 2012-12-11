@@ -37,7 +37,7 @@ set ruler
 set visualbell
 set noerrorbells
 set laststatus=2
-set statusline=%n\ %f%=%l\\%L
+set statusline=%n\ %F\ %m%r\%=%c-%l/%L
 
 nnoremap ; :nohlsearch<CR>
 set pastetoggle=<F2>
