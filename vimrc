@@ -53,13 +53,14 @@ elseif has("win32")
 endif
 
 "NERDTree
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeChDirMode=1
 let NERDTreeIgnore=['\.pyc$', '\.swp$']
 let NERDTreeQuitOnOpen=1
 let NERDTreeMinimalUI=1
 let NERDTreeShowBookmarks=1
+map <C-n> :NERDTreeToggle<CR>
 
+autocmd BufWritePost *.py call Flake8()
 "python remove trailing whitespace
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
 "python highlighting extras
