@@ -1,3 +1,9 @@
-make the following symlink for this to work
+Put this repo into ~/.vim
 
-~/.vimrc -> ~/.vim/vimrc
+    git clone https://github.com/Apreche/vim.git ~/.vim
+
+run the included setup.sh script
+
+    ~/.vim/setup.sh
+
+Use vim!
