@@ -1,5 +1,18 @@
-call pathogen#infect()
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'Valloric/YouCompleteMe'
+
+
 filetype plugin indent on
+
 colorscheme wombat256
 
 if &t_Co > 2 || has("gui_running")
@@ -59,6 +72,11 @@ let NERDTreeQuitOnOpen=1
 let NERDTreeMinimalUI=1
 let NERDTreeShowBookmarks=1
 map <C-n> :NERDTreeToggle<CR>
+
+"YouCompleteMe
+let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 autocmd BufWritePost *.py call Flake8()
 "python remove trailing whitespace
