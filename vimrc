@@ -10,17 +10,15 @@ Bundle 'scrooloose/syntastic'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'Valloric/YouCompleteMe'
 
-
 filetype plugin indent on
-
-colorscheme wombat256
+set background=dark
+colorscheme base16-default
 
 if &t_Co > 2 || has("gui_running")
     syntax on
 endif
 
 if has("gui_running")
-    colorscheme Tomorrow
     set lines=45
     set columns=84
     if has("win32")
