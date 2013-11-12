@@ -8,7 +8,6 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'Valloric/YouCompleteMe'
 
 filetype plugin indent on
 set background=dark
