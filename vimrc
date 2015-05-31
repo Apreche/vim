@@ -10,8 +10,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'airblade/vim-gitgutter'
 
 filetype plugin indent on
-set background=dark
-colorscheme base16-default
+set background=light
+colorscheme Tomorrow
 
 if &t_Co > 2 || has("gui_running")
     syntax on
@@ -69,11 +69,6 @@ let NERDTreeQuitOnOpen=1
 let NERDTreeMinimalUI=1
 let NERDTreeShowBookmarks=1
 map <C-n> :NERDTreeToggle<CR>
-
-"YouCompleteMe
-let g:ycm_min_num_of_chars_for_completion = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
 
 autocmd BufWritePost *.py call Flake8()
 "python remove trailing whitespace
