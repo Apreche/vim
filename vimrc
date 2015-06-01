@@ -1,13 +1,15 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'airblade/vim-gitgutter'
+Plugin 'gmarik/vundle'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'airblade/vim-gitgutter'
+
+call vundle#end()
 
 filetype plugin indent on
 set background=light
@@ -17,14 +19,10 @@ if &t_Co > 2 || has("gui_running")
     syntax on
 endif
 
-if has("gui_running")
-    set lines=45
-    set columns=84
-    if has("win32")
-        set guifont=Source_Code_Pro:h12:cANSI
-    else
-        set guifont=Source\ Code\ Pro\ 12
-    endif
+if has("win32")
+    set guifont=Source_Code_Pro:h12:cANSI
+else
+    set guifont=Source\ Code\ Pro\ 12
 endif
 
 set tabstop=4
@@ -74,9 +72,11 @@ autocmd BufWritePost *.py call Flake8()
 "python remove trailing whitespace
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
 "python highlighting extras
-let python_highlight_all = 1
+let python_highlight_all=1
+let g:flake8_max_line_length=99
+let g:flake8_show_in_gutter=0
 
 "PHP highlighting extras
-let php_sql_query = 1
-let php_htmlInStrings = 1
-let php_baselib = 1
+let php_sql_query=1
+let php_htmlInStrings=1
+let php_baselib=1
