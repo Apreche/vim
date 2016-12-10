@@ -1,29 +1,11 @@
-set nocompatible
-filetype off
+execute pathogen#infect()
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/vundle'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'airblade/vim-gitgutter'
-
-call vundle#end()
-
+syntax on
 filetype plugin indent on
 set background=light
 colorscheme Tomorrow
 
-if &t_Co > 2 || has("gui_running")
-    syntax on
-endif
-
-if has("win32")
-    set guifont=Source_Code_Pro:h12:cANSI
-else
-    set guifont=Source\ Code\ Pro\ 12
-endif
+set guifont=Source\ Code\ Pro\ Medium\ 12
 
 set tabstop=4
 set softtabstop=4
@@ -49,16 +31,9 @@ set statusline=%n\ %F\ %m%r\%=%c-%l/%L
 
 nnoremap ; :nohlsearch<CR>
 set pastetoggle=<F2>
-
-if has("unix")
-    set backup
-    set backupdir=/tmp
-    set directory=/tmp
-elseif has("win32")
-    set backup
-    set backupdir=C:\Windows\Temp
-    set noswapfile
-endif
+set backup
+set backupdir=/tmp
+set directory=/tmp
 
 "NERDTree
 let NERDTreeChDirMode=1
@@ -75,8 +50,3 @@ autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
 let python_highlight_all=1
 let g:flake8_max_line_length=99
 let g:flake8_show_in_gutter=0
-
-"PHP highlighting extras
-let php_sql_query=1
-let php_htmlInStrings=1
-let php_baselib=1
