@@ -48,5 +48,4 @@ autocmd BufWritePost *.py call Flake8()
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
 "python highlighting extras
 let python_highlight_all=1
-let g:flake8_max_line_length=99
 let g:flake8_show_in_gutter=0
