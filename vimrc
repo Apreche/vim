@@ -5,7 +5,8 @@ filetype plugin indent on
 set background=light
 colorscheme Tomorrow
 
-set guifont=Source\ Code\ Pro\ Medium\ 12
+set guifont=Source\ Code\ Pro\ Regular\ 12
+set guioptions-=rL
 
 set tabstop=4
 set softtabstop=4
