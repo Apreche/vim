@@ -2,6 +2,10 @@ Put this repo into ~/.vim
 
     git clone https://github.com/Apreche/vim.git ~/.vim
 
+For python dev, make sure flake8 is installed
+
+    sudo -H pip install -r requirements.txt
+
 run the included setup.sh script
 
     ~/.vim/setup.sh
