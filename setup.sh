@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+git submodule update --init --recursive
 rm -f ~/.vimrc
 ln -s ~/.vim/vimrc ~/.vimrc
 rm -f ~/.config/flake8
