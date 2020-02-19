@@ -1,5 +1,3 @@
-Requires vim >= 8.0
-
 Put this repo into ~/.vim
 
     git clone https://github.com/Apreche/vim.git ~/.vim
@@ -8,8 +6,10 @@ For python dev, make sure flake8 is installed
 
     sudo -H pip install -r requirements.txt
 
-run the included setup.sh script
+Make sure that flake8 Python package is installed
 
-    ~/.vim/setup.sh
+Open vim for the first time and run
+
+    :PlugInstall
 
 Use vim!

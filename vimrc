@@ -1,9 +1,18 @@
-syntax on
-filetype plugin indent on
-set background=light
-colorscheme Tomorrow
+call plug#begin()
+Plug 'sonph/onehalf', {'rtp': 'vim'}
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle' }
+Plug 'nvie/vim-flake8', {'for': 'python'}
+call plug#end()
 
-set guifont=Source\ Code\ Pro\ Regular\ 12
+syntax on
+set t_Co=256
+set cursorline
+set termguicolors
+set background=light
+colorscheme onehalflight
+filetype plugin indent on
+
+set guifont=JetBrains\ Mono\ 12
 set guioptions-=rL
 
 set tabstop=4
@@ -26,7 +35,9 @@ set ruler
 set visualbell
 set noerrorbells
 set laststatus=2
-set statusline=%n\ %F\ %m%r\%=%c-%l/%L
+
+set statusline=%1*%m%r%#StatusLine#:%F%=%c:\%l/%L
+hi User1 ctermbg=black ctermfg=red guibg=black guifg=red
 
 nnoremap ; :nohlsearch<CR>
 set pastetoggle=<F2>
@@ -42,6 +53,7 @@ let NERDTreeMinimalUI=1
 let NERDTreeShowBookmarks=1
 map <C-n> :NERDTreeToggle<CR>
 
+"Flake8
 autocmd BufWritePost *.py call Flake8()
 "python remove trailing whitespace
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
