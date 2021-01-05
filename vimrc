@@ -1,22 +1,18 @@
 call plug#begin()
-Plug 'sonph/onehalf', {'rtp': 'vim'}
+Plug 'chriskempson/base16-vim'
+Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle' }
 Plug 'nvie/vim-flake8', {'for': 'python'}
 call plug#end()
 
-set t_8f=[38;2;%lu;%lu;%lum        " set foreground color
-set t_8b=[48;2;%lu;%lu;%lum        " set background color
-colorscheme onehalflight
-set t_Co=256                         " Enable 256 colors
-set termguicolors                    " Enable GUI colors for the terminal to get truecolor
-
-syntax on
-set cursorline
+set termguicolors
 set background=light
+syntax on
 filetype plugin indent on
+colorscheme base16-tomorrow
 
-set guifont=JetBrains\ Mono\ 12
-set guioptions-=rL
+set guifont=Source\ Code\ Pro\ Regular\ 12
+set guioptions-=rL  " remove scrollbars
 
 set tabstop=4
 set softtabstop=4
@@ -34,13 +30,13 @@ set incsearch
 set scrolloff=5
 set backspace=2
 set number
-set ruler
 set visualbell
 set noerrorbells
 set laststatus=2
+set updatetime=100  " so gitgutter updates faster
 
 set statusline=%1*%m%r%#StatusLine#:%F%=%c:\%l/%L
-hi User1 ctermbg=black ctermfg=red guibg=black guifg=red
+highlight LineNr ctermbg=white guibg=white
 
 nnoremap ; :nohlsearch<CR>
 set pastetoggle=<F2>
