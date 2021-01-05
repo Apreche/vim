@@ -6,10 +6,15 @@ Plug 'nvie/vim-flake8', {'for': 'python'}
 call plug#end()
 
 set termguicolors
-set background=dark
+set background=light
 syntax on
 filetype plugin indent on
-colorscheme base16-tomorrow-night
+colorscheme base16-tomorrow
+
+set guifont=Source_Code_Pro:h12:cANSI:qDRAFT
+set guioptions-=rL  " remove scrollbars
+
+set lines=50 columns=120
 
 set tabstop=4
 set softtabstop=4
