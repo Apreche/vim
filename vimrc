@@ -59,3 +59,21 @@ autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
 "python highlighting extras
 let python_highlight_all=1
 let g:flake8_show_in_gutter=0
+
+"Windows Terminal Fixes
+" These variables are only set when running Windows Terminal
+if !empty($WT_SESSION) && !empty($WT_PROFILE_ID)
+    " Can't change cursor color from white, must use dark scheme
+    set background=dark
+    colorscheme base16-tomorrow-night
+    " If X isn't running, vim won't launch properly without this setting
+    set clipboard=autoselect,exclude:.*
+    " Need to change cursor shape a special way
+    let &t_EI .= "\e[1 q"
+    let &t_SI .= "\e[5 q"
+    augroup windows_term
+        autocmd!
+        autocmd VimEnter * silent !echo -ne "\e[1 q"
+        autocmd VimLeave * silent !echo -ne "\e[5 q"
+    augroup END
+endif
