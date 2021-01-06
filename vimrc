@@ -1,6 +1,6 @@
 call plug#begin()
-Plug 'chriskempson/base16-vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle' }
 Plug 'nvie/vim-flake8', {'for': 'python'}
 call plug#end()
@@ -9,11 +9,12 @@ set termguicolors
 set background=light
 syntax on
 filetype plugin indent on
-colorscheme base16-tomorrow
+colorscheme onehalflight
 
-set guifont=Source\ Code\ Pro\ Regular\ 12
+set guifont=JetBrains\ Mono\ 12
 set guioptions-=rL  " remove scrollbars
 
+set cursorline
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -36,7 +37,6 @@ set laststatus=2
 set updatetime=100  " so gitgutter updates faster
 
 set statusline=%1*%m%r%#StatusLine#:%F%=%c:\%l/%L
-highlight LineNr ctermbg=white guibg=white
 
 nnoremap ; :nohlsearch<CR>
 set pastetoggle=<F2>
@@ -65,7 +65,7 @@ let g:flake8_show_in_gutter=0
 if !empty($WT_SESSION) && !empty($WT_PROFILE_ID)
     " Can't change cursor color from white, must use dark scheme
     set background=dark
-    colorscheme base16-tomorrow-night
+    colorscheme onehalfdark
     " If X isn't running, vim won't launch properly without this setting
     set clipboard=autoselect,exclude:.*
     " Need to change cursor shape a special way
