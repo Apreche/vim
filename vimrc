@@ -11,7 +11,7 @@ syntax on
 filetype plugin indent on
 colorscheme onehalflight
 
-set guifont=JetBrains\ Mono\ 12
+set guifont=Source\ Code\ Pro\ 12
 set guioptions-=rL  " remove scrollbars
 
 set cursorline
