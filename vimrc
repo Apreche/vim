@@ -1,8 +1,8 @@
 call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle' }
 Plug 'nvie/vim-flake8', {'for': 'python'}
+Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 set termguicolors
@@ -44,13 +44,9 @@ set backup
 set backupdir=/tmp
 set directory=/tmp
 
-"NERDTree
-let NERDTreeChDirMode=1
-let NERDTreeIgnore=['\.pyc$', '\.swp$']
-let NERDTreeQuitOnOpen=1
-let NERDTreeMinimalUI=1
-let NERDTreeShowBookmarks=1
-map <C-n> :NERDTreeToggle<CR>
+"CtrlP
+let g:ctrlp_map = '<c-n>'
+let g:ctrlp_show_hidden = 1
 
 "Flake8
 autocmd BufWritePost *.py call Flake8()
