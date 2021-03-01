@@ -47,6 +47,7 @@ set directory=/tmp
 "CtrlP
 let g:ctrlp_map = '<c-n>'
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_open_new_file = 't'
 
 "Flake8
 autocmd BufWritePost *.py call Flake8()
