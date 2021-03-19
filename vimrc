@@ -1,8 +1,9 @@
 call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
-Plug 'nvie/vim-flake8', {'for': 'python'}
+"Plug 'nvie/vim-flake8', {'for': 'python'}
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 set termguicolors
@@ -44,18 +45,31 @@ set backup
 set backupdir=/tmp
 set directory=/tmp
 
+"HTML
+autocmd FileType html,htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
 "CtrlP
 let g:ctrlp_map = '<c-n>'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_open_new_file = 't'
 
+"Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 "Flake8
-autocmd BufWritePost *.py call Flake8()
+"autocmd BufWritePost *.py call Flake8()
 "python remove trailing whitespace
-autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
+"autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
 "python highlighting extras
-let python_highlight_all=1
-let g:flake8_show_in_gutter=0
+"let python_highlight_all=1
+"let g:flake8_show_in_gutter=0
 
 "Windows Terminal Fixes
 " These variables are only set when running Windows Terminal
