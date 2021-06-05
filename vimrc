@@ -2,7 +2,7 @@ call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'vim-syntastic/syntastic'
+Plug 'scrooloose/syntastic'
 call plug#end()
 
 set termguicolors
