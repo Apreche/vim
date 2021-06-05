@@ -1,7 +1,6 @@
 call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
-"Plug 'nvie/vim-flake8', {'for': 'python'}
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-syntastic/syntastic'
 call plug#end()
@@ -12,7 +11,7 @@ syntax on
 filetype plugin indent on
 colorscheme onehalflight
 
-set guifont=Source\ Code\ Pro\ 12
+set guifont=JetBrains\ Mono\ 14
 set guioptions-=rL  " remove scrollbars
 
 set cursorline
@@ -62,14 +61,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-"Flake8
-"autocmd BufWritePost *.py call Flake8()
-"python remove trailing whitespace
-"autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
-"python highlighting extras
-"let python_highlight_all=1
-"let g:flake8_show_in_gutter=0
 
 "Windows Terminal Fixes
 " These variables are only set when running Windows Terminal
