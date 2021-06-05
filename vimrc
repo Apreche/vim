@@ -1,15 +1,18 @@
 call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle' }
-Plug 'nvie/vim-flake8', {'for': 'python'}
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 set termguicolors
-set background=dark
+set background=light
 syntax on
 filetype plugin indent on
-colorscheme onehalfdark
+colorscheme onehalflight
+
+set guifont=JetBrains_Mono:h14:cANSI:qDRAFT
+set guioptions-=rL  " remove scrollbars
 
 set cursorline
 set tabstop=4
@@ -42,17 +45,38 @@ set noswapfile
 set backupdir=$HOME\vimtemp
 set directory=$HOME\vimtemp
 
-"NERDTree
-let NERDTreeChDirMode=1
-let NERDTreeIgnore=['\.pyc$', '\.swp$']
-let NERDTreeQuitOnOpen=1
-let NERDTreeMinimalUI=1
-let NERDTreeShowBookmarks=1
-map <C-n> :NERDTreeToggle<CR>
+"HTML
+autocmd FileType html,htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
-"python remove trailing whitespace
-autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
-"python highlighting extras
-let python_highlight_all=1
+"CtrlP
+let g:ctrlp_map = '<c-n>'
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_open_new_file = 't'
 
-let g:gitgutter_git_executable = 'C:\Program Files\Git\bin\git.exe'
+"Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+"Windows Terminal Fixes
+" These variables are only set when running Windows Terminal
+if !empty($WT_SESSION) && !empty($WT_PROFILE_ID)
+    " Can't change cursor color from white, must use dark scheme
+    set background=dark
+    colorscheme onehalfdark
+    " If X isn't running, vim won't launch properly without this setting
+    set clipboard=autoselect,exclude:.*
+    " Need to change cursor shape a special way
+    let &t_EI .= "\e[1 q"
+    let &t_SI .= "\e[5 q"
+    augroup windows_term
+        autocmd!
+        autocmd VimEnter * silent !echo -ne "\e[1 q"
+        autocmd VimLeave * silent !echo -ne "\e[5 q"
+    augroup END
+endif
