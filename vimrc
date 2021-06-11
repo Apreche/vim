@@ -1,10 +1,12 @@
 set nocompatible
 
 call plug#begin()
-Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'tpope/vim-commentary'
+Plug 'vim-airline/vim-airline'
 Plug 'vim-syntastic/syntastic'
 call plug#end()
 
@@ -64,6 +66,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_python_chekcers=['flake8']
 
 "Windows Terminal Fixes
 " These variables are only set when running Windows Terminal
