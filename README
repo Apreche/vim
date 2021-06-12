@@ -4,7 +4,7 @@ Put this repo into ~/.vim
 
 For python dev, make sure flake8 is installed
 
-    sudo -H pip install -r requirements.txt
+    pip install --user -r requirements.txt
 
 Make sure that flake8 Python package is installed
 
