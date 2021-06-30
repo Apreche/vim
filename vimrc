@@ -1,4 +1,6 @@
+set nocompatible
 call plug#begin()
+Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'ctrlpvim/ctrlp.vim'
