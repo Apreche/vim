@@ -1,32 +1,26 @@
 set nocompatible
 call plug#begin()
-Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/syntastic'
+Plug 'sheerun/vim-polyglot'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 set termguicolors
 set background=light
-syntax on
-filetype plugin indent on
 colorscheme onehalflight
+syntax on
 
 set guifont=JetBrains_Mono:h14:cANSI:qDRAFT
 set guioptions-=rL  " remove scrollbars
+set renderoptions=type:directx,geom:1,taamode:1,level:0.5,renmode:5,gamma:1.5,contrast:0.5
 
 set cursorline
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set smarttab
-set expandtab
 set shiftround
-set autoindent
-set copyindent
-set ignorecase
-set smartcase
 set showmatch
 set hlsearch
 set incsearch
@@ -37,33 +31,28 @@ set visualbell
 set noerrorbells
 set laststatus=2
 set updatetime=100  " so gitgutter updates faster
-
-set statusline=%1*%m%r%#StatusLine#:%F%=%c:\%l/%L
-
-nnoremap ; :nohlsearch<CR>
 set pastetoggle=<F2>
 set backup
-set noswapfile
 set backupdir=$HOME\vimtemp
 set directory=$HOME\vimtemp
 
-"HTML
-autocmd FileType html,htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
+nnoremap ; :nohlsearch<CR>
 
 "CtrlP
 let g:ctrlp_map = '<c-n>'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_open_new_file = 't'
 
-"Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"Airline
+let g:airline_powerline_fonts = 1
+let g:airline_section_z = "%l/%L:%c"
 
+"Syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers=['flake8']
 
 "Windows Terminal Fixes
 " These variables are only set when running Windows Terminal
