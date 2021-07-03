@@ -17,8 +17,9 @@ colorscheme onehalfdark
 syntax on
 
 set guifont=JetBrains\ Mono\ 13
-set guioptions-=rL " Remove scrollbars
-set guioptions+=d " dark mode
+set guioptions-=r  " Remove scrollbar
+set guioptions-=T  " Remove toolbar
+set guioptions+=d  " dark mode
 
 set cursorline
 set shiftround
