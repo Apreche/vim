@@ -16,8 +16,8 @@ colorscheme onehalflight
 syntax on
 
 set guifont=JetBrains_Mono:h14:cANSI:qDRAFT
-set guioptions-=rL  " remove scrollbars
-set renderoptions=type:directx,geom:1,taamode:1,level:0.5,renmode:5,gamma:1.5,contrast:0.5
+set guioptions-=r  " remove scrollbar
+set guioptions-=T  " remove toolbar
 
 set cursorline
 set shiftround
