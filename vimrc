@@ -6,7 +6,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-syntastic/syntastic'
 call plug#end()
@@ -16,7 +15,7 @@ set background=dark
 colorscheme onehalfdark
 syntax on
 
-set guifont=JetBrains\ Mono\ 13
+set guifont=Noto\ Mono\ 13
 set guioptions-=r  " Remove scrollbar
 set guioptions-=T  " Remove toolbar
 set guioptions+=d  " dark mode
