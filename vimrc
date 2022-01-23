@@ -15,7 +15,7 @@ set background=dark
 colorscheme onehalfdark
 syntax on
 
-set guifont=Noto\ Mono\ 13
+set guifont=Iosevka\ Expanded\ 14
 set guioptions-=r  " Remove scrollbar
 set guioptions-=T  " Remove toolbar
 set guioptions+=d  " dark mode
