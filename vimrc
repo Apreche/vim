@@ -8,6 +8,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-syntastic/syntastic'
+Plug 'iamcco/markdown-preview.nvim', {'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 call plug#end()
 
 set termguicolors
@@ -15,7 +16,7 @@ set background=light
 colorscheme onehalflight
 syntax on
 
-set guifont=JetBrains_Mono:h14:cANSI:qDRAFT
+set guifont=Iosevka_Extended:h14:cANSI:qDRAFT
 set guioptions-=r  " remove scrollbar
 set guioptions-=T  " remove toolbar
 
@@ -37,6 +38,10 @@ set backupdir=$HOME\vimtemp
 set directory=$HOME\vimtemp
 
 nnoremap ; :nohlsearch<CR>
+
+"html
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
 
 "CtrlP
 let g:ctrlp_map = '<c-n>'
