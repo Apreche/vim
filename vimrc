@@ -54,18 +54,3 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers=['flake8']
-
-"Windows Terminal Fixes
-" These variables are only set when running Windows Terminal
-if !empty($WT_SESSION) && !empty($WT_PROFILE_ID)
-    " If X isn't running, vim won't launch properly without this setting
-    set clipboard=autoselect,exclude:.*
-    " Need to change cursor shape a special way
-    let &t_EI .= "\e[1 q"
-    let &t_SI .= "\e[5 q"
-    augroup windows_term
-        autocmd!
-        autocmd VimEnter * silent !echo -ne "\e[1 q"
-        autocmd VimLeave * silent !echo -ne "\e[5 q"
-    augroup END
-endif
