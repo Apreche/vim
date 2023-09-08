@@ -12,15 +12,18 @@ call plug#end()
 
 set termguicolors
 set background=dark
-colorscheme onehalfdark
+" colorscheme onehalfdark
 syntax on
 
-set guifont=Iosevka\ Expanded\ 14
+set guifont=Berkeley\ Mono
 set guioptions-=r  " Remove scrollbar
 set guioptions-=T  " Remove toolbar
 set guioptions+=d  " dark mode
 
 set cursorline
+hi CursorLine term=NONE cterm=NONE ctermbg=242 guibg=Grey40
+hi CursorLineNr term=bold cterm=bold gui=bold
+
 set shiftround
 set showmatch
 set hlsearch
@@ -45,7 +48,7 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_open_new_file = 't'
 
 "Airline
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:airline_section_z = "%l/%L:%c"
 
 "Syntastic
